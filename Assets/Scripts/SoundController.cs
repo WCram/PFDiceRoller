@@ -22,7 +22,22 @@ public class SoundController : MonoBehaviour {
     public void OnTriggerEnter(Collider other)
     {
         
+        switch(other.tag)
+        {
+            case "Ground":
+                AudioSource.PlayClipAtPoint(ground, transform.position);
 
+                break;
+            case "d4":
+            case "d6":
+            case "d8":
+            case "d10":
+            case "d12":
+            case "d20":
+            case "d100":
+                AudioSource.PlayClipAtPoint(diceHit, transform.position);
+                break;
+        }
 
     } // End OnTriggerEnter()
 
