@@ -1999,6 +1999,8 @@ MonoBehaviour:
   aSong: {fileID: 8300000, guid: 73ce2c716b349204e9b93041eced860a, type: 3}
   CrowdVolume: 0.4
   SongVolume: 0.1
+  PlayCrowd: 1
+  PlaySong: 1
 --- !u!82 &534669907
 AudioSource:
   m_ObjectHideFlags: 0
