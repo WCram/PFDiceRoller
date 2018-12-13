@@ -46,3 +46,6 @@ public class SoundController : MonoBehaviour {
     } // End OnCollisionEnter()
 
 } // End class SoundController
+
+// Dice Sound - tic.wav by fellur
+// Ground - Knock_1.wav by Adam_N 
