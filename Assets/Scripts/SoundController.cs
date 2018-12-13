@@ -6,11 +6,20 @@ public class SoundController : MonoBehaviour {
 
     public AudioClip diceHit;
     public AudioClip ground;
+    public int pitch = 5;
+    AudioSource aSourceDice;
+    AudioSource aSourceGround;
 
-    //// Use this for initialization
-    //void Start () {
+    private void Awake()
+    {
+        aSourceDice = GetComponent<AudioSource>();
+        aSourceGround = GetComponent<AudioSource>();
 
-    //}
+        aSourceDice.clip = diceHit;
+        aSourceGround.clip = ground;
+        aSourceDice.pitch = pitch;
+    }
+
 
     //// Update is called once per frame
     //void Update () {
@@ -21,8 +30,9 @@ public class SoundController : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other)
     {
-        
-        switch(other.tag)
+        aSourceDice.pitch = pitch;
+
+        switch (other.tag)
         {
             case "Ground":
                 AudioSource.PlayClipAtPoint(ground, transform.position);
