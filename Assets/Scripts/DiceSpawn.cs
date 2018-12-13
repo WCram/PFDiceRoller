@@ -106,11 +106,11 @@ public class DiceSpawn : MonoBehaviour {
                 while ((line = reader.ReadLine()) != null)
                 {
                     AddTorollDictionary(line);
-                    Debug.Log(line + " loaded");
+
                 }
             }
 
-            Debug.Log(rollDictionary.Count);
+
         }
 
     } // End LoadRollsFromText()
