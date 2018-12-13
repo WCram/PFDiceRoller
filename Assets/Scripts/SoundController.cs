@@ -7,6 +7,7 @@ public class SoundController : MonoBehaviour {
     public AudioClip diceHit;
     public AudioClip ground;
     public int pitch = 5;
+    public float velocity = 1f;
     AudioSource aSourceDice;
     AudioSource aSourceGround;
 
@@ -21,34 +22,27 @@ public class SoundController : MonoBehaviour {
     }
 
 
-    //// Update is called once per frame
-    //void Update () {
-
-
-
-    //} // End Update()
-
-    public void OnTriggerEnter(Collider other)
+    public void OnCollisionEnter(Collision collision)
     {
-        aSourceDice.pitch = pitch;
-
-        switch (other.tag)
+        if (collision.relativeVelocity.magnitude > velocity)
         {
-            case "Ground":
-                AudioSource.PlayClipAtPoint(ground, transform.position);
+            switch (collision.gameObject.tag)
+            {
+                case "Ground":
+                    AudioSource.PlayClipAtPoint(ground, transform.position);
 
-                break;
-            case "d4":
-            case "d6":
-            case "d8":
-            case "d10":
-            case "d12":
-            case "d20":
-            case "d100":
-                AudioSource.PlayClipAtPoint(diceHit, transform.position);
-                break;
+                    break;
+                case "d4":
+                case "d6":
+                case "d8":
+                case "d10":
+                case "d12":
+                case "d20":
+                case "d100":
+                    AudioSource.PlayClipAtPoint(diceHit, transform.position);
+                    break;
+            }
         }
-
-    } // End OnTriggerEnter()
+    } // End OnCollisionEnter()
 
 } // End class SoundController
