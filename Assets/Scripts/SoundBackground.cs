@@ -14,8 +14,9 @@ public class SoundBackground : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        aSource = GetComponents<AudioSource>();
 
+        // Pull all AudioSources
+        aSource = GetComponents<AudioSource>();
 
         aSource[0].clip = aCrowd;
         aSource[0].loop = true;
@@ -26,8 +27,6 @@ public class SoundBackground : MonoBehaviour {
         aSource[1].loop = true;
         aSource[1].volume = SongVolume;
         aSource[1].Play();
-
-        //AudioSource.PlayClipAtPoint(aSong, transform.position);
     }
 	
 	// Update is called once per frame

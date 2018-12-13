@@ -26,6 +26,7 @@ public class DropDownController : MonoBehaviour, IPointerClickHandler {
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        // Load list of Save rolls
         if(ds.GetRollsList().Count > 0)
         {
             rollList.ClearOptions();
