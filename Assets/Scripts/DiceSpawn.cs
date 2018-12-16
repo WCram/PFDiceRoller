@@ -109,8 +109,6 @@ public class DiceSpawn : MonoBehaviour {
 
                 }
             }
-
-
         }
 
     } // End LoadRollsFromText()
@@ -173,8 +171,6 @@ public class DiceSpawn : MonoBehaviour {
     public List<string> GetRollsList()
     {
         //rollDictionary = new Dictionary<string, int[]>();
-
-
         return rollDictionary.Keys.ToList();
 
     } // End GetRollsList()

@@ -90,6 +90,14 @@ public class PlayerController : MonoBehaviour {
 
     } // End OnTriggerEnter
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.layer == 9)
+        {
+            Physics.IgnoreLayerCollision(9,9);
+        }
+    }
+
     // Returns the value of the current rigidBody dice side
     void SideValueCheck()
     {
