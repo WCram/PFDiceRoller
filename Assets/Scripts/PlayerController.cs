@@ -28,11 +28,12 @@ public class PlayerController : MonoBehaviour {
     public int diceValue;
 
     public DiceSide[] diceSides;
-
+    DiceSpawn ds;
 
 
     void Start()
     {
+        ds = new DiceSpawn();
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
         lowPassFilterFactor = accelerometerUpdateInterval / lowPassKernelWidthInSeconds;
@@ -92,6 +93,7 @@ public class PlayerController : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
+        //Debug.Log(ds.DiceCount().ToString());
         if(collision.gameObject.layer == 9)
         {
             Physics.IgnoreLayerCollision(9,9);

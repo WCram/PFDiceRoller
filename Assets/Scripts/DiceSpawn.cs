@@ -255,4 +255,17 @@ public class DiceSpawn : MonoBehaviour {
 
     } // End AddRolls()
 
+    public int DiceCount()
+    {
+        return int.Parse(txtD4Num.text) +
+            int.Parse(txtD6Num.text) +
+            int.Parse(txtD8Num.text) +
+            int.Parse(txtD10Num.text) +
+            int.Parse(txtD12Num.text) +
+            int.Parse(txtD20Num.text) +
+            int.Parse(txtD100Num.text)
+            ;
+
+    } // End DiceCount()
+
 }
